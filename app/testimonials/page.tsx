@@ -93,8 +93,8 @@ export default function TestimonialsPage() {
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
             <div className="text-3xl">🌿</div>
             <div>
-              <h1 className="text-2xl font-bold text-amber-900">Laxmi Panchgavya</h1>
-              <p className="text-sm text-amber-700">Ayurvedic</p>
+              <h1 className="text-2xl font-bold text-amber-900">Lakshmi Panchagavya</h1>
+              <p className="text-sm text-amber-700">Ayurvedic Clinic</p>
             </div>
           </Link>
           
@@ -116,18 +116,18 @@ export default function TestimonialsPage() {
           </div>
           <h1 className="text-6xl font-bold mb-6">What Our Customers Say</h1>
           <p className="text-xl text-amber-100 max-w-3xl mx-auto">
-            Real experiences from real people who trust Laxmi Panchgavya for their wellness journey
+            Real experiences from real people who trust Lakshmi Panchagavya Ayurvedic Clinic for their wellness journey
           </p>
           
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 max-w-4xl mx-auto">
             <div className="bg-amber-800/50 backdrop-blur p-6 rounded-xl">
-              <div className="text-4xl font-bold mb-2">4.9/5</div>
-              <div className="text-amber-100">Average Rating</div>
+              <div className="text-4xl font-bold mb-2">4.8/5</div>
+              <div className="text-amber-100">Google Rating</div>
             </div>
             <div className="bg-amber-800/50 backdrop-blur p-6 rounded-xl">
-              <div className="text-4xl font-bold mb-2">2000+</div>
-              <div className="text-amber-100">Reviews</div>
+              <div className="text-4xl font-bold mb-2">184+</div>
+              <div className="text-amber-100">Google Reviews</div>
             </div>
             <div className="bg-amber-800/50 backdrop-blur p-6 rounded-xl">
               <div className="text-4xl font-bold mb-2">98%</div>

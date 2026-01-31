@@ -102,8 +102,8 @@ export default function ProductsPage() {
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
             <div className="text-3xl">🌿</div>
             <div>
-              <h1 className="text-2xl font-bold text-amber-900">Laxmi Panchgavya</h1>
-              <p className="text-sm text-amber-700">Ayurvedic</p>
+              <h1 className="text-2xl font-bold text-amber-900">Lakshmi Panchagavya</h1>
+              <p className="text-sm text-amber-700">Ayurvedic Clinic</p>
             </div>
           </Link>
           
@@ -122,7 +122,7 @@ export default function ProductsPage() {
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-4">Our Premium Products</h1>
           <p className="text-xl text-amber-100 max-w-2xl mx-auto">
-            Discover our complete range of authentic Ayurvedic products, each crafted with care and certified for quality
+            Discover our complete range of authentic Ayurvedic products, each crafted with care. Expert Naadi Diagnosis available at our Kukatpally clinic.
           </p>
         </div>
       </section>

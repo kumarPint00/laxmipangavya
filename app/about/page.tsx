@@ -9,8 +9,8 @@ export default function AboutPage() {
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
             <div className="text-3xl">🌿</div>
             <div>
-              <h1 className="text-2xl font-bold text-amber-900">Laxmi Panchgavya</h1>
-              <p className="text-sm text-amber-700">Ayurvedic</p>
+              <h1 className="text-2xl font-bold text-amber-900">Lakshmi Panchagavya</h1>
+              <p className="text-sm text-amber-700">Ayurvedic Clinic</p>
             </div>
           </Link>
           
@@ -30,9 +30,9 @@ export default function AboutPage() {
           <div className="inline-block bg-amber-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
             Our Story
           </div>
-          <h1 className="text-6xl font-bold mb-6">The Laxmi Panchgavya Legacy</h1>
+          <h1 className="text-6xl font-bold mb-6">The Lakshmi Panchagavya Legacy</h1>
           <p className="text-xl text-amber-100 max-w-3xl mx-auto">
-            15+ years of dedication to authentic Ayurvedic healing and holistic wellness
+            Expert Ayurvedic care in Hyderabad with Dr. Lakshmi (MD) - Specialist in Pulse (Naadi) Diagnosis. Trusted by 184+ patients with 4.8★ rating.
           </p>
         </div>
       </section>

@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Laxmi Panchgavya Ayurvedic - Premium Ayurvedic Products",
-  description: "Experience authentic Ayurvedic healing with Laxmi Panchgavya. 100% natural, certified products for wellness and rejuvenation.",
+  title: "Lakshmi Panchagavya Ayurvedic Clinic - Hyderabad | Naadi Diagnosis Specialist",
+  description: "Expert Ayurvedic treatment in Hyderabad. Dr. Lakshmi (MD) - Specialist in Pulse (Naadi) Diagnosis. Authentic Panchagavya products & treatments. 4.8★ rated clinic.",
 };
 
 export default function RootLayout({
