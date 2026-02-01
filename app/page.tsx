@@ -474,7 +474,49 @@ export default function Home() {
           <p className="text-sm text-amber-700 mt-4">🔒 We respect your privacy. Unsubscribe anytime.</p>
         </div>
       </section>
+      {/* Call to Action - Book Appointment */}
+      <section className="py-20 px-6 bg-gradient-to-r from-green-600 to-green-800 text-white">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="text-6xl mb-6">📅</div>
+          <h2 className="text-5xl font-bold mb-6">Ready to Start Your Healing Journey?</h2>
+          <p className="text-2xl mb-8 text-green-100">
+            Book your appointment with Dr. Lakshmi for expert Naadi Diagnosis and personalized Ayurvedic treatment
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
+            <Link
+              href="/contact#appointment"
+              className="bg-white text-green-900 px-10 py-5 rounded-xl font-bold text-xl hover:bg-green-50 transition-all transform hover:scale-105 shadow-2xl"
+            >
+              📅 Book Appointment Now
+            </Link>
+            <a
+              href="tel:+918919453812"
+              className="bg-green-900 text-white px-10 py-5 rounded-xl font-bold text-xl hover:bg-green-950 transition-all transform hover:scale-105 shadow-2xl border-2 border-white"
+            >
+              📞 Call: 089194 53812
+            </a>
+          </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+              <div className="text-4xl mb-3">🕐</div>
+              <div className="font-bold text-lg mb-2">Open All Days</div>
+              <div className="text-green-100">11:00 AM - 7:00 PM</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+              <div className="text-4xl mb-3">⭐</div>
+              <div className="font-bold text-lg mb-2">4.8★ Rating</div>
+              <div className="text-green-100">184+ Google Reviews</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl">
+              <div className="text-4xl mb-3">🫱</div>
+              <div className="font-bold text-lg mb-2">Expert Care</div>
+              <div className="text-green-100">Naadi Diagnosis Specialist</div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Contact Section */}
       <section id="contact" className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -687,7 +729,19 @@ export default function Home() {
             Call Now
           </span>
         </a>
-
+        {/* Book Appointment Button - NEW */}
+        <Link
+          href="/contact#appointment"
+          className="bg-gradient-to-r from-green-600 to-green-700 text-white p-4 rounded-full shadow-2xl hover:from-green-700 hover:to-green-800 transition-all transform hover:scale-110 group relative animate-pulse"
+          aria-label="Book Appointment"
+        >
+          <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"/>
+          </svg>
+          <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded text-sm font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+            📅 Book Appointment
+          </span>
+        </Link>
         {/* Email Button */}
         <a
           href="mailto:clinic@laxmipanchagavya.com"

@@ -11,8 +11,23 @@ export default function ContactPage() {
     subject: "",
     message: ""
   });
+  const [appointmentData, setAppointmentData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    date: "",
+    time: "",
+    reason: ""
+  });
+  const [callbackData, setCallbackData] = useState({
+    name: "",
+    phone: "",
+    preferredTime: ""
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{type: 'success' | 'error', message: string} | null>(null);
+  const [appointmentStatus, setAppointmentStatus] = useState<{type: 'success' | 'error', message: string} | null>(null);
+  const [callbackStatus, setCallbackStatus] = useState<{type: 'success' | 'error', message: string} | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,6 +69,100 @@ export default function ContactPage() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleAppointmentChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setAppointmentData({ ...appointmentData, [e.target.name]: e.target.value });
+  };
+
+  const handleCallbackChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    setCallbackData({ ...callbackData, [e.target.name]: e.target.value });
+  };
+
+  const handleAppointmentSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setAppointmentStatus(null);
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...appointmentData,
+          subject: 'Appointment Booking Request',
+          message: `Appointment Details:\nDate: ${appointmentData.date}\nTime: ${appointmentData.time}\nReason: ${appointmentData.reason}`
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setAppointmentStatus({
+          type: 'success',
+          message: '✅ Appointment request received! We\'ll confirm your booking shortly via call/WhatsApp.'
+        });
+        setAppointmentData({ name: "", phone: "", email: "", date: "", time: "", reason: "" });
+      } else {
+        setAppointmentStatus({
+          type: 'error',
+          message: data.error || 'Failed to book appointment. Please call us directly.'
+        });
+      }
+    } catch (error) {
+      setAppointmentStatus({
+        type: 'error',
+        message: 'Network error. Please call us at 089194 53812'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleCallbackSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setCallbackStatus(null);
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: callbackData.name,
+          phone: callbackData.phone,
+          email: 'callback@request.com',
+          subject: 'Callback Request',
+          message: `Callback Request:\nName: ${callbackData.name}\nPhone: ${callbackData.phone}\nPreferred Time: ${callbackData.preferredTime}`
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setCallbackStatus({
+          type: 'success',
+          message: '✅ We\'ll call you back at your preferred time!'
+        });
+        setCallbackData({ name: "", phone: "", preferredTime: "" });
+      } else {
+        setCallbackStatus({
+          type: 'error',
+          message: data.error || 'Failed to send callback request.'
+        });
+      }
+    } catch (error) {
+      setCallbackStatus({
+        type: 'error',
+        message: 'Network error. Please call us directly.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -151,7 +260,207 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
+          {/* Appointment Booking & Callback Request */}
+          <div id="appointment" className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 items-start">
+            {/* Book Appointment */}
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border-2 border-green-300 shadow-lg">"
+              <div className="text-center mb-6">
+                <div className="text-5xl mb-3">📅</div>
+                <h2 className="text-3xl font-bold text-green-900 mb-2">Book an Appointment</h2>
+                <p className="text-green-700">Schedule your consultation with Dr. Lakshmi</p>
+              </div>
+              
+              {appointmentStatus && (
+                <div className={`mb-6 p-4 rounded-lg ${
+                  appointmentStatus.type === 'success' 
+                    ? 'bg-green-100 border-2 border-green-500 text-green-800' 
+                    : 'bg-red-100 border-2 border-red-500 text-red-800'
+                }`}>
+                  {appointmentStatus.message}
+                </div>
+              )}
+              
+              <form onSubmit={handleAppointmentSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-green-900 font-semibold mb-2">Your Name *</label>
+                  <input 
+                    type="text" 
+                    name="name"
+                    value={appointmentData.name}
+                    onChange={handleAppointmentChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border-2 border-green-200 focus:outline-none focus:border-green-600 transition"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-green-900 font-semibold mb-2">Phone Number *</label>
+                  <input 
+                    type="tel" 
+                    name="phone"
+                    value={appointmentData.phone}
+                    onChange={handleAppointmentChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border-2 border-green-200 focus:outline-none focus:border-green-600 transition"
+                    placeholder="+91 XXXXX XXXXX"
+                  />
+                </div>
 
+                <div>
+                  <label className="block text-green-900 font-semibold mb-2">Email (Optional)</label>
+                  <input 
+                    type="email" 
+                    name="email"
+                    value={appointmentData.email}
+                    onChange={handleAppointmentChange}
+                    className="w-full px-4 py-3 rounded-lg border-2 border-green-200 focus:outline-none focus:border-green-600 transition"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-green-900 font-semibold mb-2">Preferred Date *</label>
+                  <input 
+                    type="date" 
+                    name="date"
+                    value={appointmentData.date}
+                    onChange={handleAppointmentChange}
+                    required
+                    min={new Date().toISOString().split('T')[0]}
+                    className="w-full px-4 py-3 rounded-lg border-2 border-green-200 focus:outline-none focus:border-green-600 transition"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-green-900 font-semibold mb-2">Preferred Time *</label>
+                  <select 
+                    name="time"
+                    value={appointmentData.time}
+                    onChange={handleAppointmentChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border-2 border-green-200 focus:outline-none focus:border-green-600 transition"
+                  >
+                    <option value="">Select time slot</option>
+                    <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
+                    <option value="12:00 PM - 1:00 PM">12:00 PM - 1:00 PM</option>
+                    <option value="1:00 PM - 2:00 PM">1:00 PM - 2:00 PM</option>
+                    <option value="2:00 PM - 3:00 PM">2:00 PM - 3:00 PM</option>
+                    <option value="3:00 PM - 4:00 PM">3:00 PM - 4:00 PM</option>
+                    <option value="4:00 PM - 5:00 PM">4:00 PM - 5:00 PM</option>
+                    <option value="5:00 PM - 6:00 PM">5:00 PM - 6:00 PM</option>
+                    <option value="6:00 PM - 7:00 PM">6:00 PM - 7:00 PM</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-green-900 font-semibold mb-2">Reason for Visit *</label>
+                  <textarea 
+                    name="reason"
+                    value={appointmentData.reason}
+                    onChange={handleAppointmentChange}
+                    required
+                    rows={3}
+                    className="w-full px-4 py-3 rounded-lg border-2 border-green-200 focus:outline-none focus:border-green-600 transition resize-none"
+                    placeholder="Briefly describe your health concern..."
+                  ></textarea>
+                </div>
+                
+                <button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-green-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-800 transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Booking...' : '📅 Book Appointment'}
+                </button>
+              </form>
+            </div>
+
+            {/* Request Callback */}
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border-2 border-blue-300 shadow-lg h-full flex flex-col">
+              <div className="text-center mb-6">
+                <div className="text-5xl mb-3">📞</div>
+                <h2 className="text-3xl font-bold text-blue-900 mb-2">Request a Callback</h2>
+                <p className="text-blue-700">We'll call you at your preferred time</p>
+              </div>
+              
+              {callbackStatus && (
+                <div className={`mb-6 p-4 rounded-lg ${
+                  callbackStatus.type === 'success' 
+                    ? 'bg-green-100 border-2 border-green-500 text-green-800' 
+                    : 'bg-red-100 border-2 border-red-500 text-red-800'
+                }`}>
+                  {callbackStatus.message}
+                </div>
+              )}
+              
+              <form onSubmit={handleCallbackSubmit} className="space-y-4 flex-grow flex flex-col">
+                <div>
+                  <label className="block text-blue-900 font-semibold mb-2">Your Name *</label>
+                  <input 
+                    type="text" 
+                    name="name"
+                    value={callbackData.name}
+                    onChange={handleCallbackChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border-2 border-blue-200 focus:outline-none focus:border-blue-600 transition"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-blue-900 font-semibold mb-2">Phone Number *</label>
+                  <input 
+                    type="tel" 
+                    name="phone"
+                    value={callbackData.phone}
+                    onChange={handleCallbackChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border-2 border-blue-200 focus:outline-none focus:border-blue-600 transition"
+                    placeholder="+91 XXXXX XXXXX"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-blue-900 font-semibold mb-2">Preferred Time *</label>
+                  <select 
+                    name="preferredTime"
+                    value={callbackData.preferredTime}
+                    onChange={handleCallbackChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border-2 border-blue-200 focus:outline-none focus:border-blue-600 transition"
+                  >
+                    <option value="">Select preferred time</option>
+                    <option value="Morning (11 AM - 1 PM)">Morning (11 AM - 1 PM)</option>
+                    <option value="Afternoon (1 PM - 4 PM)">Afternoon (1 PM - 4 PM)</option>
+                    <option value="Evening (4 PM - 7 PM)">Evening (4 PM - 7 PM)</option>
+                    <option value="Anytime Today">Anytime Today</option>
+                  </select>
+                </div>
+
+                <div className="bg-blue-100 border-l-4 border-blue-600 p-4 rounded-r-lg flex-grow">
+                  <p className="text-sm text-blue-900">
+                    <strong>Note:</strong> Our team will call you within 2 hours during clinic hours (11 AM - 7 PM, all days).
+                  </p>
+                </div>
+                
+                <button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-blue-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-800 transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed mt-auto"
+                >
+                  {isSubmitting ? 'Sending...' : '📞 Request Callback'}
+                </button>
+
+                <div className="text-center pt-4 border-t border-blue-200">
+                  <p className="text-sm text-blue-700 mb-2">Or call us directly:</p>
+                  <a href="tel:+918919453812" className="text-2xl font-bold text-blue-900 hover:text-blue-600 transition">
+                    089194 53812
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
           {/* Contact Form and Additional Info */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
