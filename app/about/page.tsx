@@ -65,38 +65,51 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-amber-900">Our Journey</h2>
+              <h2 className="text-4xl font-bold text-amber-900">Our Philosophy</h2>
+              <div className="bg-green-50 border-l-4 border-green-600 p-6 rounded-r-xl">
+                <p className="text-lg text-green-900 font-semibold italic mb-2">
+                  "An Elixir of Life"
+                </p>
+                <p className="text-amber-800">
+                  A Vedic Treatment practice and a Divine Solution to cure diseases through the by-products from our great Indian Humped Cow.
+                </p>
+              </div>
               <p className="text-lg text-amber-800 leading-relaxed">
-                Founded in 2011, Laxmi Panchgavya Ayurvedic began as a small family venture with a big dream: to bring the healing power of authentic Ayurveda to every household. Our founders, drawing from generations of Ayurvedic knowledge, started crafting traditional Panchgavya products using time-honored methods.
+                At Lakshmi Ayurvedic Clinic & Stores, we specialize in 100% natural medicines derived from Panchagavya (five cow products). Our approach is holistic - <strong>No Tests, No Surgery, No Operations</strong> - just pure, natural healing following ancient Ayurvedic principles.
               </p>
+              <div className="bg-amber-100 border-l-4 border-amber-600 p-6 rounded-r-xl">
+                <p className="text-lg text-amber-900 font-semibold mb-2">
+                  🫱 Naadi Parikshan - Our Specialty
+                </p>
+                <p className="text-amber-800">
+                  Dr. Lakshmi (M.D. Panchagavya Therapy) specializes in Naadi Parikshan - a holistic pulse diagnosis technique that analyzes your Vata, Pitta, and Kapha balance to provide personalized treatment plans.
+                </p>
+              </div>
               <p className="text-lg text-amber-800 leading-relaxed">
-                Over the past 15 years, we've grown from a local shop to a trusted name across India, serving over 10,000 satisfied customers. Yet, we've never compromised on our core values: authenticity, purity, and the well-being of our customers.
-              </p>
-              <p className="text-lg text-amber-800 leading-relaxed">
-                Every product we create is a blend of ancient wisdom and modern quality standards, tested rigorously to ensure you receive only the best nature has to offer.
+                Located at <strong>Vigneshwara Apartments, Opp. Union Bank, Beside Prerana Hospital, Balaji Nagar, Kukatpally, Hyderabad - 500072</strong>, we serve patients from across the region with permanent solutions for various health conditions.
               </p>
             </div>
             
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-white p-8 rounded-xl shadow-lg text-center transform hover:scale-105 transition">
-                <div className="text-5xl mb-4">🏆</div>
-                <div className="text-3xl font-bold text-amber-900">15+</div>
-                <div className="text-amber-700">Years of Excellence</div>
+                <div className="text-5xl mb-4">⭐</div>
+                <div className="text-2xl font-bold text-amber-900">NO TEST</div>
+                <div className="text-amber-700 text-sm mt-2">Natural Diagnosis</div>
               </div>
               <div className="bg-white p-8 rounded-xl shadow-lg text-center transform hover:scale-105 transition">
-                <div className="text-5xl mb-4">👥</div>
-                <div className="text-3xl font-bold text-amber-900">10K+</div>
-                <div className="text-amber-700">Happy Customers</div>
+                <div className="text-5xl mb-4">⭐</div>
+                <div className="text-2xl font-bold text-amber-900">NO SURGERY</div>
+                <div className="text-amber-700 text-sm mt-2">Non-Invasive</div>
+              </div>
+              <div className="bg-white p-8 rounded-xl shadow-lg text-center transform hover:scale-105 transition">
+                <div className="text-5xl mb-4">⭐</div>
+                <div className="text-2xl font-bold text-amber-900">NO OPERATION</div>
+                <div className="text-amber-700 text-sm mt-2">Safe Healing</div>
               </div>
               <div className="bg-white p-8 rounded-xl shadow-lg text-center transform hover:scale-105 transition">
                 <div className="text-5xl mb-4">🌿</div>
-                <div className="text-3xl font-bold text-amber-900">50+</div>
-                <div className="text-amber-700">Premium Products</div>
-              </div>
-              <div className="bg-white p-8 rounded-xl shadow-lg text-center transform hover:scale-105 transition">
-                <div className="text-5xl mb-4">✅</div>
-                <div className="text-3xl font-bold text-amber-900">100%</div>
-                <div className="text-amber-700">Quality Certified</div>
+                <div className="text-2xl font-bold text-amber-900">100%</div>
+                <div className="text-amber-700 text-sm mt-2">Natural Medicines</div>
               </div>
             </div>
           </div>

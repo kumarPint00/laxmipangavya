@@ -126,8 +126,109 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Key Features from Flyer - 100% Natural Treatment */}
+      <section className="py-16 px-6 bg-gradient-to-r from-green-900 to-emerald-900 text-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h3 className="text-4xl md:text-5xl font-bold mb-4">🌿 "An Elixir of Life"</h3>
+            <p className="text-xl text-green-100 max-w-3xl mx-auto mb-6">
+              A Vedic Treatment practice and a Divine Solution to cure diseases through the by-products from our great Indian Humped Cow
+            </p>
+            <div className="inline-block bg-white text-green-900 px-8 py-4 rounded-2xl font-bold text-2xl shadow-2xl">
+              OUR MEDICINES ARE 100% NATURAL
+            </div>
+          </div>
+
+          {/* Three Pillars */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl text-center border-2 border-white/20">
+              <div className="text-5xl mb-3">⭐</div>
+              <h4 className="text-2xl font-bold mb-2">NO TEST</h4>
+            </div>
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl text-center border-2 border-white/20">
+              <div className="text-5xl mb-3">⭐</div>
+              <h4 className="text-2xl font-bold mb-2">NO SURGERY</h4>
+            </div>
+            <div className="bg-white/10 backdrop-blur p-6 rounded-xl text-center border-2 border-white/20">
+              <div className="text-5xl mb-3">⭐</div>
+              <h4 className="text-2xl font-bold mb-2">NO OPERATION</h4>
+            </div>
+          </div>
+
+          {/* Naadi Parikshan */}
+          <div className="bg-amber-50 text-amber-900 p-8 rounded-2xl shadow-xl">
+            <div className="text-center">
+              <h4 className="text-3xl font-bold mb-4">🫱 Naadi Parikshan (Pulse Diagnosis)</h4>
+              <p className="text-lg max-w-3xl mx-auto">
+                A holistic analysis of your health status by checking your pulse. Determines Vata, Pitta, Kapha balance to provide personalized treatment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Conditions Treated Section */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-red-100 text-red-900 px-6 py-3 rounded-full text-lg font-bold mb-6">
+              Permanent Solution / Remedy for:
+            </div>
+            <h3 className="text-4xl md:text-5xl font-bold text-amber-900 mb-4">Conditions We Treat</h3>
+            <p className="text-xl text-amber-700 max-w-2xl mx-auto">
+              Natural, effective treatments for a wide range of health conditions
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { name: "Menstrual Problems", icon: "🌸" },
+              { name: "Iron Deficiency", icon: "💊" },
+              { name: "Acidity", icon: "🔥" },
+              { name: "Gastric Problems", icon: "🫃" },
+              { name: "Indigestion", icon: "🍽️" },
+              { name: "Hair Fall / Bald Head", icon: "💇" },
+              { name: "Arthritis / Joint Pains", icon: "🦴" },
+              { name: "Depression", icon: "🧠" },
+              { name: "Thyroid, Sinus / Asthma", icon: "🫁" },
+              { name: "Paralysis", icon: "♿" },
+              { name: "Sexual Issues", icon: "❤️" },
+              { name: "Infertility", icon: "👶" },
+              { name: "Nervous Disorders", icon: "⚡" },
+              { name: "Diabetes", icon: "🩸" },
+              { name: "Blood Pressure", icon: "💓" },
+              { name: "Obesity", icon: "⚖️" },
+              { name: "PCOD", icon: "🌺" },
+              { name: "Skin Allergy / Fairness", icon: "✨" },
+              { name: "Pigmentation", icon: "🎨" },
+              { name: "Piles", icon: "💢" },
+              { name: "Kidney Stones / Infection", icon: "🫘" },
+              { name: "Rheumatoid Arthritis (RA)", icon: "🦵" },
+              { name: "Joint Pain", icon: "🤕" }
+            ].map((condition, idx) => (
+              <div 
+                key={idx} 
+                className="flex items-center gap-3 bg-gradient-to-r from-amber-50 to-orange-50 p-4 rounded-lg border-2 border-amber-200 hover:border-amber-400 hover:shadow-lg transition-all"
+              >
+                <div className="text-3xl">{condition.icon}</div>
+                <div className="font-semibold text-amber-900">{condition.name}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <div className="inline-block bg-gradient-to-r from-amber-900 to-orange-900 text-white px-8 py-4 rounded-2xl text-xl font-bold shadow-xl">
+              🌿 EAT NATURAL - LIVE HEALTHY 🌿
+            </div>
+            <p className="mt-6 text-lg text-amber-800 max-w-2xl mx-auto">
+              All kinds of organic products are available at our stores for a complete natural lifestyle
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Products Section */}
-      <section id="products" className="py-20 px-6 bg-white">
+      <section id="products" className="py-20 px-6 bg-amber-50">"
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-block bg-amber-100 text-amber-900 px-4 py-2 rounded-full text-sm font-semibold mb-4">
@@ -218,7 +319,7 @@ export default function Home() {
       </section>
 
       {/* Benefits Section */}
-      <section id="benefits" className="py-20 px-6 bg-gradient-to-br from-amber-50 to-orange-50">
+      <section id="benefits" className="py-20 px-6 bg-white">"
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h3 className="text-5xl font-bold text-amber-900 mb-4">Why Ayurveda?</h3>

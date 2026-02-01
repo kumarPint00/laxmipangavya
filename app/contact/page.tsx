@@ -98,15 +98,16 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <div className="bg-white p-8 rounded-2xl border-2 border-amber-200 shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2">
               <div className="text-5xl mb-4 text-center">📍</div>
-              <h3 className="font-bold text-xl text-amber-900 mb-3 text-center">Visit Our Store</h3>
+              <h3 className="font-bold text-xl text-amber-900 mb-3 text-center">Visit Our Clinic & Store</h3>
               <div className="text-amber-800 text-center space-y-2">
-                <p>Metro Station Kukatpally</p>
-                <p>Balaji Nagar Main Rd, Balaji Nagar</p>
-                <p>Kukatpally, Hyderabad</p>
-                <p>Telangana 500072</p>
+                <p className="font-semibold">Vigneshwara Apartments</p>
+                <p className="text-sm">Opp. Union Bank</p>
+                <p className="text-sm">Beside Prerana Hospital</p>
+                <p className="text-sm">Balaji Nagar, Kukatpally</p>
+                <p className="text-sm">Hyderabad - 500072</p>
                 <p className="mt-4 font-semibold">Clinic Hours:</p>
-                <p className="text-sm">Opens 10:30 AM - Sun-Sat</p>
-                <p className="text-sm">Closed: Friday</p>
+                <p className="text-sm">Everyday: 11:00 AM - 7:00 PM</p>
+                <p className="text-sm text-green-600 font-semibold">Open All Days</p>
               </div>
             </div>
             
@@ -255,16 +256,16 @@ export default function ContactPage() {
                 <h3 className="text-2xl font-bold text-amber-900 mb-4">Quick Answers</h3>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-bold text-amber-900 mb-2">📦 How long does delivery take?</h4>
-                    <p className="text-amber-800 text-sm">We typically deliver within 3-5 business days across India.</p>
+                    <h4 className="font-bold text-amber-900 mb-2">🌿 What is Naadi Parikshan?</h4>
+                    <p className="text-amber-800 text-sm">Naadi Parikshan is a holistic analysis of your health status by checking your pulse to determine Vata, Pitta, Kapha balance.</p>
                   </div>
                   <div>
-                    <h4 className="font-bold text-amber-900 mb-2">💳 What payment methods do you accept?</h4>
-                    <p className="text-amber-800 text-sm">We accept UPI, cards, net banking, and cash on delivery.</p>
+                    <h4 className="font-bold text-amber-900 mb-2">💊 Are your medicines natural?</h4>
+                    <p className="text-amber-800 text-sm">Yes! Our medicines are 100% natural, made from Panchagavya (cow by-products). No tests, surgery, or operations required.</p>
                   </div>
                   <div>
-                    <h4 className="font-bold text-amber-900 mb-2">🔄 What is your return policy?</h4>
-                    <p className="text-amber-800 text-sm">We offer a 7-day return policy for unopened products.</p>
+                    <h4 className="font-bold text-amber-900 mb-2">🏪 Do you have organic products?</h4>
+                    <p className="text-amber-800 text-sm">Yes, all kinds of organic products are available at our stores for a healthy lifestyle.</p>
                   </div>
                   <div>
                     <h4 className="font-bold text-amber-900 mb-2">👨‍⚕️ Can I consult with an Ayurvedic doctor?</h4>
@@ -277,20 +278,15 @@ export default function ContactPage() {
               <div className="bg-gradient-to-br from-amber-900 to-orange-900 text-white p-8 rounded-2xl shadow-lg">
                 <h3 className="text-2xl font-bold mb-4">Clinic Hours</h3>
                 <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <span>Sunday - Thursday</span>
-                    <span className="font-semibold">10:30 AM - 8:00 PM</span>
+                  <div className="flex justify-between items-center">
+                    <span className="text-lg">Every Day</span>
+                    <span className="font-bold text-xl">11:00 AM - 7:00 PM</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span>Saturday</span>
-                    <span className="font-semibold">10:30 AM - 8:00 PM</span>
-                  </div>
-                  <div className="flex justify-between text-amber-200">
-                    <span>Friday</span>
-                    <span className="font-semibold">Closed</span>
-                  </div>
-                  <div className="mt-4 pt-4 border-t border-amber-700">
-                    <p className="text-amber-100 text-sm">📍 Kukatpally, Hyderabad</p>
+                  <div className="mt-4 pt-4 border-t border-amber-700 text-center">
+                    <p className="text-green-300 font-semibold text-lg">✓ Open All Days</p>
+                    <p className="text-amber-100 text-sm mt-2">📍 Vigneshwara Apartments, Opp. Union Bank</p>
+                    <p className="text-amber-100 text-sm">Beside Prerana Hospital, Balaji Nagar</p>
+                    <p className="text-amber-100 text-sm">Kukatpally, Hyderabad - 500072</p>
                   </div>
                 </div>
               </div>
@@ -316,18 +312,19 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-amber-900 mb-8 text-center">Find Us Here</h2>
           <div className="bg-gradient-to-br from-amber-100 to-orange-100 h-96 rounded-2xl flex items-center justify-center border-2 border-amber-200">
-            <div className="text-center">
+            <div className="text-center px-6">
               <div className="text-8xl mb-4">🗺️</div>
-              <p className="text-xl text-amber-900 font-semibold">Lakshmi Panchagavya Ayurvedic Clinic</p>
-              <p className="text-amber-700">Metro Station Kukatpally, Balaji Nagar Main Rd</p>
-              <p className="text-amber-700">Hyderabad, Telangana 500072</p>
+              <p className="text-xl text-amber-900 font-semibold mb-2">Lakshmi Ayurvedic Clinic & Stores</p>
+              <p className="text-amber-700 font-medium">Vigneshwara Apartments, Opp. Union Bank</p>
+              <p className="text-amber-700">Beside Prerana Hospital, Balaji Nagar</p>
+              <p className="text-amber-700">Kukatpally, Hyderabad - 500072</p>
               <a 
-                href="https://maps.google.com/?q=Metro+Station+Kukatpally+Balaji+Nagar+Main+Rd+Hyderabad"
+                href="https://maps.google.com/?q=Vigneshwara+Apartments+Opp+Union+Bank+Balaji+Nagar+Kukatpally+Hyderabad"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block mt-4 bg-amber-900 text-white px-6 py-3 rounded-lg hover:bg-amber-800 transition"
               >
-                Open in Google Maps
+                📍 Open in Google Maps
               </a>
             </div>
           </div>
