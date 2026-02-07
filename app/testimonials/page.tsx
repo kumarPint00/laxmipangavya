@@ -1,89 +1,9 @@
 import Link from "next/link";
+import { testimonials } from "../data/testimonials";
 
 export default function TestimonialsPage() {
-  const testimonials = [
-    {
-      name: "Priya Sharma",
-      location: "Mumbai, Maharashtra",
-      rating: 5,
-      text: "The Panchgavya Ghee has been a game-changer for my family's health. My children's immunity has improved significantly, and we no longer fall sick frequently. The pure quality and authentic taste are unmatched!",
-      avatar: "👩",
-      product: "Panchgavya Ghee",
-      date: "2 weeks ago"
-    },
-    {
-      name: "Rajesh Kumar",
-      location: "Delhi",
-      rating: 5,
-      text: "I've been using their herbal supplements for 6 months now. My energy levels have improved dramatically, and I feel more vibrant than ever. The best part is there are no side effects!",
-      avatar: "👨",
-      product: "Herbal Supplements",
-      date: "1 month ago"
-    },
-    {
-      name: "Anita Desai",
-      location: "Bangalore, Karnataka",
-      rating: 5,
-      text: "Excellent products! The therapeutic oils have helped me manage my joint pain naturally. I've reduced my dependency on pain medication. Highly recommend to anyone with chronic pain.",
-      avatar: "👵",
-      product: "Therapeutic Oils",
-      date: "3 weeks ago"
-    },
-    {
-      name: "Vikram Singh",
-      location: "Jaipur, Rajasthan",
-      rating: 5,
-      text: "Amazing quality! I've tried many Ayurvedic products, but Laxmi Panchgavya stands out. Their customer service is exceptional, and the products are truly authentic.",
-      avatar: "👨‍💼",
-      product: "Multiple Products",
-      date: "1 week ago"
-    },
-    {
-      name: "Meera Patel",
-      location: "Ahmedabad, Gujarat",
-      rating: 5,
-      text: "The skincare range is fantastic! My skin has never looked better. Natural ingredients really make a difference. I'm a customer for life!",
-      avatar: "👩‍🦰",
-      product: "Skincare Range",
-      date: "2 months ago"
-    },
-    {
-      name: "Suresh Reddy",
-      location: "Hyderabad, Telangana",
-      rating: 5,
-      text: "Being diabetic, I was skeptical about Ayurvedic products. But the wellness tea has helped regulate my sugar levels naturally. Thank you, Laxmi Panchgavya!",
-      avatar: "👴",
-      product: "Wellness Tea",
-      date: "1 month ago"
-    },
-    {
-      name: "Kavita Joshi",
-      location: "Pune, Maharashtra",
-      rating: 5,
-      text: "The digestive churna has worked wonders for my family. We all have better digestion and feel lighter. Traditional wisdom really works!",
-      avatar: "👩‍⚕️",
-      product: "Digestive Churna",
-      date: "3 weeks ago"
-    },
-    {
-      name: "Arjun Mehta",
-      location: "Chennai, Tamil Nadu",
-      rating: 5,
-      text: "Fast delivery, excellent packaging, and top-notch quality. The hair oil has significantly reduced my hair fall. Very satisfied customer!",
-      avatar: "🧑",
-      product: "Hair Care Oil",
-      date: "2 weeks ago"
-    },
-    {
-      name: "Deepa Iyer",
-      location: "Kochi, Kerala",
-      rating: 5,
-      text: "As an Ayurveda practitioner myself, I can vouch for the authenticity of these products. I recommend them to all my patients. Keep up the great work!",
-      avatar: "👩‍⚕️",
-      product: "Professional User",
-      date: "1 month ago"
-    }
-  ];
+  // Using shared testimonials data from app/data/testimonials.ts
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-50">
@@ -100,7 +20,7 @@ export default function TestimonialsPage() {
           
           <ul className="hidden md:flex gap-8 text-amber-900 font-semibold">
             <li><Link href="/" className="hover:text-amber-600 transition-colors">Home</Link></li>
-            <li><Link href="/products" className="hover:text-amber-600 transition-colors">Products</Link></li>
+
             <li><Link href="/about" className="hover:text-amber-600 transition-colors">About</Link></li>
             <li><Link href="/testimonials" className="text-amber-600">Testimonials</Link></li>
             <li><Link href="/contact" className="hover:text-amber-600 transition-colors">Contact</Link></li>
@@ -130,7 +50,7 @@ export default function TestimonialsPage() {
               <div className="text-amber-100">Google Reviews</div>
             </div>
             <div className="bg-amber-800/50 backdrop-blur p-6 rounded-xl">
-              <div className="text-4xl font-bold mb-2">98%</div>
+              <div className="text-4xl font-bold mb-2">100%</div>
               <div className="text-amber-100">Satisfaction Rate</div>
             </div>
           </div>
@@ -158,10 +78,10 @@ export default function TestimonialsPage() {
                   "{testimonial.text}"
                 </p>
                 
-                {/* Product Badge */}
+                {/* Remedy Badge */}
                 <div className="mb-4">
                   <span className="bg-amber-100 text-amber-900 text-xs px-3 py-1 rounded-full font-semibold">
-                    {testimonial.product}
+                    {testimonial.remedy}
                   </span>
                 </div>
                 
@@ -237,17 +157,17 @@ export default function TestimonialsPage() {
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link 
-              href="/products"
-              className="bg-white text-amber-900 px-8 py-4 rounded-lg font-semibold hover:bg-amber-100 transition-all transform hover:scale-105 shadow-lg"
-            >
-              Shop Now
-            </Link>
-            <Link 
               href="/contact"
               className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-amber-800 transition-all transform hover:scale-105"
             >
               Talk to Expert
             </Link>
+          </div>
+          <div className="mt-6 text-center">
+            <div className="flex justify-center gap-4">
+              <a href="https://www.facebook.com/profile.php?id=61586780679749" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="bg-white/10 px-4 py-3 rounded-lg text-2xl">📘</a>
+              <a href="https://www.instagram.com/lakshmi_panchagavya?utm_source=qr&igsh=ZzFreGVuajhwb3p6" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="bg-white/10 px-4 py-3 rounded-lg text-2xl">📷</a>
+            </div>
           </div>
         </div>
       </section>
@@ -258,7 +178,7 @@ export default function TestimonialsPage() {
           <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-12 rounded-2xl border-2 border-amber-200 text-center">
             <h2 className="text-4xl font-bold text-amber-900 mb-4">Share Your Experience</h2>
             <p className="text-xl text-amber-700 mb-8">
-              Have you tried our products? We'd love to hear from you!
+              Have you tried our remedies? We'd love to hear from you!
             </p>
             <Link 
               href="/contact"

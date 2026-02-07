@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { testimonials } from "./data/testimonials";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState<number | null>(null);
+
 
   return (
     <>
@@ -23,7 +24,7 @@ export default function Home() {
           {/* Desktop Menu */}
           <ul className="hidden md:flex gap-8 text-amber-900 font-semibold">
             <li><Link href="/" className="text-amber-600 transition-colors">Home</Link></li>
-            <li><Link href="/products" className="hover:text-amber-600 transition-colors">Products</Link></li>
+
             <li><Link href="#benefits" className="hover:text-amber-600 transition-colors">Benefits</Link></li>
             <li><Link href="/testimonials" className="hover:text-amber-600 transition-colors">Testimonials</Link></li>
             <li><Link href="/about" className="hover:text-amber-600 transition-colors">About</Link></li>
@@ -50,7 +51,7 @@ export default function Home() {
           <div className="md:hidden bg-amber-50 border-t border-amber-200 px-6 py-4">
             <ul className="space-y-3 text-amber-900 font-semibold">
               <li><Link href="/" onClick={() => setMobileMenuOpen(false)} className="block hover:text-amber-600">Home</Link></li>
-              <li><Link href="/products" onClick={() => setMobileMenuOpen(false)} className="block hover:text-amber-600">Products</Link></li>
+
               <li><a href="#benefits" onClick={() => setMobileMenuOpen(false)} className="block hover:text-amber-600">Benefits</a></li>
               <li><Link href="/testimonials" onClick={() => setMobileMenuOpen(false)} className="block hover:text-amber-600">Testimonials</Link></li>
               <li><Link href="/about" onClick={() => setMobileMenuOpen(false)} className="block hover:text-amber-600">About</Link></li>
@@ -79,11 +80,11 @@ export default function Home() {
                 Expert Naadi Diagnosis & Ayurvedic Healing
               </h2>
               <p className="text-xl text-amber-800 leading-relaxed">
-                Experience authentic Ayurvedic treatment with Dr. Lakshmi (MD), specialist in Pulse (Naadi) Diagnosis. Located in Kukatpally, Hyderabad - offering traditional treatments and premium Panchagavya products for holistic wellness.
+                Experience authentic Ayurvedic treatment with Dr. Lakshmi (MD), specialist in Pulse (Naadi) Diagnosis. Located in Kukatpally, Hyderabad - offering traditional Panchagavya remedies and personalized treatments for holistic wellness.
               </p>
               <div className="flex gap-4 flex-wrap">
-                <Link href="/products" className="bg-amber-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-amber-800 transition-all transform hover:scale-105 shadow-lg">
-                  Our Products
+                <Link href="/contact#appointment" className="bg-green-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-800 transition-all transform hover:scale-105 shadow-lg">
+                  Book Appointment
                 </Link>
                 <Link href="/about" className="border-2 border-amber-900 text-amber-900 px-8 py-4 rounded-lg font-semibold hover:bg-amber-100 transition-all transform hover:scale-105">
                   About Clinic
@@ -107,10 +108,10 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Hero Image Placeholder */}
+            {/* Hero Image */}
             <div className="relative">
-              <div className="bg-gradient-to-br from-amber-200 to-orange-200 rounded-2xl h-96 lg:h-[500px] flex items-center justify-center shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                <div className="text-9xl">🧘‍♀️</div>
+              <div className="rounded-2xl h-96 lg:h-[500px] overflow-hidden shadow-2xl">
+                <img src="/product.jpeg" alt="Panchagavya remedies - Lakshmi Panchagavya" className="w-full h-full object-cover transform rotate-3 hover:rotate-0 transition-transform duration-500" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-lg">
                 <div className="flex items-center gap-3">
@@ -221,102 +222,43 @@ export default function Home() {
               🌿 EAT NATURAL - LIVE HEALTHY 🌿
             </div>
             <p className="mt-6 text-lg text-amber-800 max-w-2xl mx-auto">
-              All kinds of organic products are available at our stores for a complete natural lifestyle
+              All kinds of diseases are treated here with our remedies. No surgery or reports needed.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Products Section */}
-      <section id="products" className="py-20 px-6 bg-amber-50">"
+      {/* Featured Testimonials (homepage excerpts) */}
+      <section className="py-16 px-6 bg-amber-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block bg-amber-100 text-amber-900 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              Our Products
-            </div>
-            <h3 className="text-5xl font-bold text-amber-900 mb-4">Premium Ayurvedic Collection</h3>
-            <p className="text-xl text-amber-700 max-w-2xl mx-auto">
-              Discover our range of authentic Panchgavya products, each crafted with care and certified for quality
-            </p>
+          <div className="text-center mb-8">
+            <h3 className="text-4xl font-bold text-amber-900 mb-2">What Our Customers Say — 3 of them</h3>
+            <p className="text-lg text-amber-700">Short excerpts from our recent patients (includes review #5)</p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Panchgavya Ghee",
-                desc: "Pure cow ghee enriched with medicinal herbs for immunity and digestion",
-                icon: "🧈",
-                price: "₹499",
-                features: ["100% Pure", "A2 Milk", "Organic"]
-              },
-              {
-                name: "Herbal Supplements",
-                desc: "Natural immunity boosters and wellness tonics from ancient Ayurvedic recipes",
-                icon: "💊",
-                price: "₹299",
-                features: ["Lab Tested", "No Chemicals", "Vegan"]
-              },
-              {
-                name: "Therapeutic Oils",
-                desc: "Therapeutic oils for pain relief, rejuvenation and stress management",
-                icon: "🧴",
-                price: "₹399",
-                features: ["Cold Pressed", "Aromatherapy", "Organic"]
-              },
-              {
-                name: "Ayurvedic Soaps",
-                desc: "Handmade natural soaps with herbal extracts for glowing skin",
-                icon: "🧼",
-                price: "₹149",
-                features: ["Handmade", "Chemical Free", "All Skin Types"]
-              },
-              {
-                name: "Wellness Tea",
-                desc: "Herbal tea blends for detox, immunity and peaceful sleep",
-                icon: "🍵",
-                price: "₹249",
-                features: ["Organic", "Caffeine Free", "Antioxidants"]
-              },
-              {
-                name: "Skincare Range",
-                desc: "Natural face packs, creams and serums from pure herbs",
-                icon: "✨",
-                price: "₹599",
-                features: ["Natural", "Anti-Aging", "Tested"]
-              }
-            ].map((product, idx) => (
-              <div 
-                key={idx} 
-                className="bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-2xl border-2 border-amber-200 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
-                onClick={() => setSelectedProduct(idx)}
-              >
-                <div className="text-6xl mb-4">{product.icon}</div>
-                <h4 className="text-2xl font-bold text-amber-900 mb-3">{product.name}</h4>
-                <p className="text-amber-800 mb-4 min-h-[60px]">{product.desc}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {product.features.map((feature, i) => (
-                    <span key={i} className="bg-white text-amber-900 text-xs px-3 py-1 rounded-full border border-amber-200">
-                      {feature}
-                    </span>
-                  ))}
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[testimonials[0], testimonials[1], testimonials[4]].map((t, i) => (
+              <div key={i} className="bg-white p-6 rounded-xl border border-amber-200">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="text-3xl">{t.avatar}</div>
+                  <div>
+                    <div className="font-bold text-amber-900">{t.name}</div>
+                    <div className="text-sm text-amber-700">{t.location}</div>
+                  </div>
                 </div>
-                
-                <div className="flex items-center justify-between mt-6 pt-6 border-t border-amber-200">
-                  <div className="text-2xl font-bold text-amber-900">{product.price}</div>
-                  <Link 
-                    href="/contact" 
-                    className="bg-amber-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-800 transition-all transform hover:scale-105"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    Order Now
-                  </Link>
-                </div>
+                <p className="text-amber-800 italic">{"" + (t.text.length > 140 ? t.text.slice(0, 137) + '...' : t.text)}</p>
+                <div className="mt-4 text-sm text-amber-600">— {t.date}</div>
               </div>
             ))}
           </div>
+
+          <div className="mt-6 text-center">
+            <Link href="/testimonials" className="inline-block bg-amber-900 text-white px-6 py-3 rounded-lg shadow-lg">Read All Testimonials</Link>
+          </div>
         </div>
       </section>
+
+      {/* Remedies section removed as requested */}
 
       {/* Benefits Section */}
       <section id="benefits" className="py-20 px-6 bg-white">"
@@ -378,7 +320,7 @@ export default function Home() {
                 name: "Anita Desai",
                 location: "Bangalore",
                 rating: 5,
-                text: "Excellent products! The therapeutic oils have helped me manage my joint pain naturally.",
+                text: "Excellent remedies! The therapeutic oils have helped me manage my joint pain naturally.",
                 avatar: "👵"
               }
             ].map((testimonial, idx) => (
@@ -415,7 +357,7 @@ export default function Home() {
                 For over 15 years, we've been dedicated to bringing authentic Ayurvedic healing to families across India. Our journey began with a simple mission: to preserve ancient wisdom and make it accessible to modern lives.
               </p>
               <p className="text-lg text-amber-100 leading-relaxed">
-                Every product is crafted with devotion, following traditional methods passed down through generations. We source only the finest organic ingredients and ensure rigorous quality testing.
+                Every remedy is crafted with devotion, following traditional methods passed down through generations. We source only the finest organic ingredients and ensure rigorous quality testing.
               </p>
               
               <div className="grid grid-cols-2 gap-6 pt-6">
@@ -427,7 +369,7 @@ export default function Home() {
                 <div className="bg-amber-800 p-6 rounded-xl">
                   <div className="text-3xl mb-2">✅</div>
                   <div className="text-2xl font-bold">100%</div>
-                  <div className="text-amber-200 text-sm">Certified Products</div>
+                  <div className="text-amber-200 text-sm">Certified Remedies</div>
                 </div>
               </div>
             </div>
@@ -494,7 +436,7 @@ export default function Home() {
               href="tel:+918919453812"
               className="bg-green-900 text-white px-10 py-5 rounded-xl font-bold text-xl hover:bg-green-950 transition-all transform hover:scale-105 shadow-2xl border-2 border-white"
             >
-              📞 Call: 089194 53812
+              📞 Customer Care: +91 8919453812
             </a>
           </div>
 
@@ -549,7 +491,7 @@ export default function Home() {
                   <div>
                     <h4 className="font-bold text-xl text-amber-900 mb-2">Call Us</h4>
                     <p className="text-amber-800">Customer Care: +91 98765 43210</p>
-                    <p className="text-amber-800">WhatsApp: +91 98765 43211</p>
+                    <p className="text-amber-800">WhatsApp: +91 9901222925</p>
                     <p className="text-amber-800 mt-2">Available 24/7 for emergencies</p>
                   </div>
                 </div>
@@ -630,7 +572,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-amber-200 text-sm">
-                Expert Ayurvedic treatments in Hyderabad. Dr. Lakshmi (MD) - Specialist in Pulse (Naadi) Diagnosis. Authentic Panchagavya products for holistic wellness.
+                Expert Ayurvedic treatments in Hyderabad. Dr. Lakshmi (MD) - Specialist in Pulse (Naadi) Diagnosis. Authentic Panchagavya remedies for holistic wellness.
               </p>
               <p className="text-amber-200 text-sm mt-2">📍 Kukatpally, Hyderabad</p>
             </div>
@@ -640,29 +582,24 @@ export default function Home() {
               <h4 className="font-bold text-lg mb-4">Quick Links</h4>
               <ul className="space-y-2 text-amber-200 text-sm">
                 <li><Link href="/" className="hover:text-white transition">Home</Link></li>
-                <li><Link href="/products" className="hover:text-white transition">Products</Link></li>
+
                 <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
                 <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
               </ul>
             </div>
             
-            {/* Products */}
             <div>
-              <h4 className="font-bold text-lg mb-4">Our Products</h4>
-              <ul className="space-y-2 text-amber-200 text-sm">
-                <li><Link href="/products" className="hover:text-white transition">Panchgavya Ghee</Link></li>
-                <li><Link href="/products" className="hover:text-white transition">Herbal Supplements</Link></li>
-                <li><Link href="/products" className="hover:text-white transition">Therapeutic Oils</Link></li>
-                <li><Link href="/products" className="hover:text-white transition">Wellness Products</Link></li>
-              </ul>
+              <h4 className="font-bold text-lg mb-4">Visit Store</h4>
+              <p className="text-amber-200 text-sm">Organic Panchagavya remedies are available at our clinic store. Visit us or contact for orders.</p>
+              <Link href="/contact" className="text-amber-200 underline mt-2 block">Contact & Orders</Link>
             </div>
             
             {/* Social */}
             <div>
               <h4 className="font-bold text-lg mb-4">Follow Us</h4>
               <div className="flex gap-4 mb-4">
-                <a href="#" className="bg-amber-800 p-3 rounded-lg hover:bg-amber-700 transition text-2xl">📘</a>
-                <a href="#" className="bg-amber-800 p-3 rounded-lg hover:bg-amber-700 transition text-2xl">📷</a>
+                <a href="https://www.facebook.com/profile.php?id=61586780679749" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="bg-amber-800 p-3 rounded-lg hover:bg-amber-700 transition text-2xl">📘</a>
+                <a href="https://www.instagram.com/lakshmi_panchagavya?utm_source=qr&igsh=ZzFreGVuajhwb3p6" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="bg-amber-800 p-3 rounded-lg hover:bg-amber-700 transition text-2xl">📷</a>
                 <a href="#" className="bg-amber-800 p-3 rounded-lg hover:bg-amber-700 transition text-2xl">🐦</a>
                 <a href="#" className="bg-amber-800 p-3 rounded-lg hover:bg-amber-700 transition text-2xl">💬</a>
               </div>
@@ -675,7 +612,7 @@ export default function Home() {
           <div className="border-t border-amber-700 pt-8 text-center">
             <p className="text-amber-100 mb-2">© 2026 Lakshmi Panchagavya Ayurvedic Clinic. All rights reserved.</p>
             <p className="text-amber-200 text-sm">Dr. Lakshmi (MD) - Specialist in Pulse (Naadi) Diagnosis 🌿</p>
-            <p className="text-amber-200 text-sm">📞 089194 53812 | 📍 Kukatpally, Hyderabad</p>
+            <p className="text-amber-200 text-sm">📞 +91 8919453812 | 📍 Kukatpally, Hyderabad</p>
             <div className="flex justify-center gap-6 mt-4 text-sm text-amber-200">
               <a href="#" className="hover:text-white transition">Privacy Policy</a>
               <span>•</span>
@@ -702,7 +639,7 @@ export default function Home() {
       <div className="fixed bottom-8 right-8 flex flex-col gap-4 z-50">
         {/* WhatsApp Button */}
         <a
-          href="https://wa.me/918919453812?text=Hello%20Dr.%20Lakshmi,%20I%20would%20like%20to%20book%20an%20appointment%20for%20Naadi%20diagnosis"
+          href="https://wa.me/919901222925?text=Hello%20Dr.%20Lakshmi,%20I%20would%20like%20to%20book%20an%20appointment"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all transform hover:scale-110 group relative"

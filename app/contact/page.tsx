@@ -114,7 +114,7 @@ export default function ContactPage() {
     } catch (error) {
       setAppointmentStatus({
         type: 'error',
-        message: 'Network error. Please call us at 089194 53812'
+        message: 'Network error. Please call us at +91 8919453812'
       });
     } finally {
       setIsSubmitting(false);
@@ -180,7 +180,7 @@ export default function ContactPage() {
           
           <ul className="hidden md:flex gap-8 text-amber-900 font-semibold">
             <li><Link href="/" className="hover:text-amber-600 transition-colors">Home</Link></li>
-            <li><Link href="/products" className="hover:text-amber-600 transition-colors">Products</Link></li>
+
             <li><Link href="/about" className="hover:text-amber-600 transition-colors">About</Link></li>
             <li><Link href="/testimonials" className="hover:text-amber-600 transition-colors">Testimonials</Link></li>
             <li><Link href="/contact" className="text-amber-600">Contact</Link></li>
@@ -207,13 +207,13 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <div className="bg-white p-8 rounded-2xl border-2 border-amber-200 shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2">
               <div className="text-5xl mb-4 text-center">📍</div>
-              <h3 className="font-bold text-xl text-amber-900 mb-3 text-center">Visit Our Clinic & Store</h3>
+              <h3 className="font-bold text-xl text-amber-900 mb-3 text-center">Lakshmi Panchagavya Ayurvedic Clinic and Stores</h3>
               <div className="text-amber-800 text-center space-y-2">
-                <p className="font-semibold">Vigneshwara Apartments</p>
-                <p className="text-sm">Opp. Union Bank</p>
-                <p className="text-sm">Beside Prerana Hospital</p>
-                <p className="text-sm">Balaji Nagar, Kukatpally</p>
-                <p className="text-sm">Hyderabad - 500072</p>
+                <p className="font-semibold">Vigneshwara Apartments, Opp. Andhra Bank</p>
+                <p className="text-sm">Beside Prerana Hospital, Balaji Nagar</p>
+                <p className="text-sm">APHB Colony, Kukatpally</p>
+                <p className="text-sm">Hyderabad - 500072, Telangana</p>
+                <p className="text-sm mt-2"><a href="https://jsdl.in/DT-284FYMGEVPJ" target="_blank" rel="noopener noreferrer" className="underline">Open on Map</a></p>
                 <p className="mt-4 font-semibold">Clinic Hours:</p>
                 <p className="text-sm">Everyday: 11:00 AM - 7:00 PM</p>
                 <p className="text-sm text-green-600 font-semibold">Open All Days</p>
@@ -226,7 +226,7 @@ export default function ContactPage() {
               <div className="text-amber-800 text-center space-y-2">
                 <p className="font-semibold">Customer Care:</p>
                 <a href="tel:+918919453812" className="text-lg block hover:text-amber-600 transition">
-                  089194 53812
+                  +91 8919453812
                 </a>
                 <p className="font-semibold mt-3">Additional Contacts:</p>
                 <a href="tel:+916304692638" className="block hover:text-amber-600 transition">
@@ -249,7 +249,7 @@ export default function ContactPage() {
                 </a>
                 <p className="font-semibold mt-3">WhatsApp Support:</p>
                 <a 
-                  href="https://wa.me/918919453812" 
+                  href="https://wa.me/919901222925" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block hover:text-amber-600 transition"
@@ -526,7 +526,7 @@ export default function ContactPage() {
                     className="w-full px-4 py-3 rounded-lg border-2 border-amber-200 focus:outline-none focus:border-amber-600 transition"
                   >
                     <option value="">Select a subject</option>
-                    <option value="product">Product Inquiry</option>
+                    <option value="remedy">Remedy Inquiry</option>
                     <option value="order">Order Status</option>
                     <option value="consultation">Ayurvedic Consultation</option>
                     <option value="wholesale">Wholesale/Bulk Orders</option>
@@ -573,8 +573,8 @@ export default function ContactPage() {
                     <p className="text-amber-800 text-sm">Yes! Our medicines are 100% natural, made from Panchagavya (cow by-products). No tests, surgery, or operations required.</p>
                   </div>
                   <div>
-                    <h4 className="font-bold text-amber-900 mb-2">🏪 Do you have organic products?</h4>
-                    <p className="text-amber-800 text-sm">Yes, all kinds of organic products are available at our stores for a healthy lifestyle.</p>
+                    <h4 className="font-bold text-amber-900 mb-2">🏪 Do you have organic remedies?</h4>
+                    <p className="text-amber-800 text-sm">Yes, all kinds of organic remedies are available at our stores for a healthy lifestyle.</p>
                   </div>
                   <div>
                     <h4 className="font-bold text-amber-900 mb-2">👨‍⚕️ Can I consult with an Ayurvedic doctor?</h4>
@@ -605,8 +605,8 @@ export default function ContactPage() {
                 <h3 className="text-2xl font-bold text-amber-900 mb-4">Follow Us</h3>
                 <p className="text-amber-800 mb-4">Stay connected for wellness tips and exclusive offers</p>
                 <div className="flex gap-4">
-                  <a href="#" className="bg-amber-900 text-white p-4 rounded-lg hover:bg-amber-800 transition text-2xl">📘</a>
-                  <a href="#" className="bg-amber-900 text-white p-4 rounded-lg hover:bg-amber-800 transition text-2xl">📷</a>
+                  <a href="https://www.facebook.com/profile.php?id=61586780679749" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="bg-amber-900 text-white p-4 rounded-lg hover:bg-amber-800 transition text-2xl">📘</a>
+                  <a href="https://www.instagram.com/lakshmi_panchagavya?utm_source=qr&igsh=ZzFreGVuajhwb3p6" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="bg-amber-900 text-white p-4 rounded-lg hover:bg-amber-800 transition text-2xl">📷</a>
                   <a href="#" className="bg-amber-900 text-white p-4 rounded-lg hover:bg-amber-800 transition text-2xl">🐦</a>
                   <a href="#" className="bg-amber-900 text-white p-4 rounded-lg hover:bg-amber-800 transition text-2xl">💬</a>
                 </div>

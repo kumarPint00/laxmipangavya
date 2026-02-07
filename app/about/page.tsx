@@ -16,7 +16,7 @@ export default function AboutPage() {
           
           <ul className="hidden md:flex gap-8 text-amber-900 font-semibold">
             <li><Link href="/" className="hover:text-amber-600 transition-colors">Home</Link></li>
-            <li><Link href="/products" className="hover:text-amber-600 transition-colors">Products</Link></li>
+
             <li><Link href="/about" className="text-amber-600">About</Link></li>
             <li><Link href="/testimonials" className="hover:text-amber-600 transition-colors">Testimonials</Link></li>
             <li><Link href="/contact" className="hover:text-amber-600 transition-colors">Contact</Link></li>
@@ -45,7 +45,7 @@ export default function AboutPage() {
               <div className="text-5xl mb-4">🎯</div>
               <h2 className="text-3xl font-bold text-amber-900 mb-4">Our Mission</h2>
               <p className="text-amber-800 text-lg leading-relaxed">
-                To preserve and propagate the ancient science of Ayurveda by providing authentic, high-quality Panchgavya products that promote holistic health and well-being. We are committed to making traditional Ayurvedic wisdom accessible to modern families.
+                To preserve and propagate the ancient science of Ayurveda by providing authentic, high-quality Panchagavya remedies that promote holistic health and well-being. We are committed to making traditional Ayurvedic wisdom accessible to modern families.
               </p>
             </div>
             
@@ -53,7 +53,7 @@ export default function AboutPage() {
               <div className="text-5xl mb-4">🔭</div>
               <h2 className="text-3xl font-bold text-amber-900 mb-4">Our Vision</h2>
               <p className="text-amber-800 text-lg leading-relaxed">
-                To become India's most trusted Ayurvedic brand, recognized for excellence in product quality, customer satisfaction, and contribution to sustainable, natural healthcare. We envision a healthier world where ancient wisdom guides modern wellness.
+                To become India's most trusted Ayurvedic brand, recognized for excellence in remedy quality, customer satisfaction, and contribution to sustainable, natural healthcare. We envision a healthier world where ancient wisdom guides modern wellness.
               </p>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function AboutPage() {
                 </p>
               </div>
               <p className="text-lg text-amber-800 leading-relaxed">
-                At Lakshmi Ayurvedic Clinic & Stores, we specialize in 100% natural medicines derived from Panchagavya (five cow products). Our approach is holistic - <strong>No Tests, No Surgery, No Operations</strong> - just pure, natural healing following ancient Ayurvedic principles.
+                At Lakshmi Ayurvedic Clinic & Stores, we specialize in 100% natural medicines derived from Panchagavya (cow by-products). Our approach is holistic - <strong>No Tests, No Surgery, No Operations</strong> - just pure, natural healing following ancient Ayurvedic principles.
               </p>
               <div className="bg-amber-100 border-l-4 border-amber-600 p-6 rounded-r-xl">
                 <p className="text-lg text-amber-900 font-semibold mb-2">
@@ -86,7 +86,7 @@ export default function AboutPage() {
                 </p>
               </div>
               <p className="text-lg text-amber-800 leading-relaxed">
-                Located at <strong>Vigneshwara Apartments, Opp. Union Bank, Beside Prerana Hospital, Balaji Nagar, Kukatpally, Hyderabad - 500072</strong>, we serve patients from across the region with permanent solutions for various health conditions.
+                Located at <strong>Vigneshwara Apartments, Opp. Andhrabank, Beside Prerana Hospital, Balaji Nagar, Aphb Colony, Kukatpally, Hyderabad - 500072, Telangana</strong>, we serve patients from across the region with permanent solutions for various health conditions.
               </p>
             </div>
             
@@ -134,7 +134,7 @@ export default function AboutPage() {
               {
                 icon: "🔬",
                 title: "Quality First",
-                desc: "Rigorous testing and quality control ensure every product meets the highest standards"
+                desc: "Rigorous testing and quality control ensure every remedy meets the highest standards"
               },
               {
                 icon: "🌾",
@@ -194,29 +194,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-amber-900 mb-4">Meet Our Experts</h2>
-            <p className="text-xl text-amber-700">Dedicated professionals committed to your wellness</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { name: "Dr. Ramesh Kumar", role: "Chief Ayurvedic Consultant", emoji: "👨‍⚕️" },
-              { name: "Smt. Lakshmi Devi", role: "Product Development Head", emoji: "👩‍🔬" },
-              { name: "Dr. Priya Sharma", role: "Quality Assurance Manager", emoji: "👩‍⚕️" }
-            ].map((member, idx) => (
-              <div key={idx} className="bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-2xl border-2 border-amber-200 text-center hover:shadow-xl transition-all">
-                <div className="text-8xl mb-4">{member.emoji}</div>
-                <h3 className="text-2xl font-bold text-amber-900 mb-2">{member.name}</h3>
-                <p className="text-amber-700 font-semibold">{member.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Team Section removed by request */}
 
       {/* CTA */}
       <section className="py-16 px-6 bg-gradient-to-r from-amber-100 to-orange-100">
@@ -226,12 +204,6 @@ export default function AboutPage() {
             Experience the Laxmi Panchgavya difference. Let ancient wisdom guide your path to health.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Link 
-              href="/products"
-              className="bg-amber-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-amber-800 transition-all transform hover:scale-105"
-            >
-              Explore Products
-            </Link>
             <Link 
               href="/contact"
               className="border-2 border-amber-900 text-amber-900 px-8 py-4 rounded-lg font-semibold hover:bg-amber-100 transition-all transform hover:scale-105"

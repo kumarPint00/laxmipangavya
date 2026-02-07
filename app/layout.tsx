@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Lakshmi Panchagavya Ayurvedic Clinic - Hyderabad | Naadi Diagnosis Specialist",
-  description: "Expert Ayurvedic treatment in Hyderabad. Dr. Lakshmi (MD) - Specialist in Pulse (Naadi) Diagnosis. Authentic Panchagavya products & treatments. 4.8★ rated clinic.",
+  description: "Expert Ayurvedic treatment in Hyderabad. Dr. Lakshmi (MD) - Specialist in Pulse (Naadi) Diagnosis. Authentic Panchagavya remedies & treatments. 4.8★ rated clinic.",
 };
 
 export default function RootLayout({
