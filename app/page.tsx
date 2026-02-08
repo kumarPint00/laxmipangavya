@@ -478,8 +478,8 @@ export default function Home() {
                   <div className="text-4xl">📍</div>
                   <div>
                     <h4 className="font-bold text-xl text-amber-900 mb-2">Visit Our Store</h4>
-                    <p className="text-amber-800">123 Wellness Street, Ayurveda Plaza</p>
-                    <p className="text-amber-800">Your City, State - 123456</p>
+                    <p className="text-amber-800">Metro Station Kukatpally, Balaji Nagar Main Rd</p>
+                    <p className="text-amber-800">Balaji Nagar, Kukatpally, Hyderabad, Telangana 500072</p>
                     <p className="text-amber-800 mt-2">Mon - Sat: 9:00 AM - 7:00 PM</p>
                   </div>
                 </div>
